@@ -25,7 +25,7 @@ from requests.auth import HTTPBasicAuth
 import download_config as cfg
 
 # file must live in same directory as this script
-TRACKER_FILE='download_tracker.json'
+TRACKER_FILE='download_tracker_nsrp.json'
 TMP_DIR='tmp'
 
 GITHUB_URL_PREFIX='https://github.com/NSRP'
