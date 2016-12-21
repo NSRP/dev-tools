@@ -191,13 +191,13 @@ def get_jenkins_artifacts(tracker):
             logger.debug('no new build for %s' % j_name)
 
     # move all tarfiles from <download_dir>/artifact/* to <download_dir>/
-    if os.path.exists('%s/archive' % cfg.config['DOWNLOAD_DIR']):
-        files = os.listdir('%s/archive/' % cfg.config['DOWNLOAD_DIR'])
+    if os.path.exists('%s/archive/target' % cfg.config['DOWNLOAD_DIR']):
+        files = os.listdir('%s/archive/target' % cfg.config['DOWNLOAD_DIR'])
         for f in files:
             f_check = '%s/%s' % (cfg.config['DOWNLOAD_DIR'], f)
             if os.path.isfile(f_check):
                 os.remove(f_check)
-            shutil.move('%s/archive/%s' % (cfg.config['DOWNLOAD_DIR'], f), cfg.config['DOWNLOAD_DIR'])
+            shutil.move('%s/archive/target/%s' % (cfg.config['DOWNLOAD_DIR'], f), cfg.config['DOWNLOAD_DIR'])
         shutil.rmtree('%s/archive' % cfg.config['DOWNLOAD_DIR'])
 
 
